@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   --banner: #55bff2;
   --banner-dark: #1584c4;
   --ink: #17212b;
@@ -493,9 +493,11 @@ h3 {
 
 .calculator-layout {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px;
+  grid-template-columns: 1fr;
+  gap: 12px;
   align-items: start;
+  max-width: 880px;
+  margin-bottom: 18px;
 }
 
 .calculator-panel,
@@ -514,6 +516,66 @@ h3 {
   margin: 0 0 18px;
   color: var(--muted);
   line-height: 1.6;
+}
+.calculator-drop {
+  padding: 0;
+  overflow: hidden;
+}
+
+.calculator-drop summary {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 5px 14px;
+  align-items: center;
+  min-height: 68px;
+  padding: clamp(16px, 2.5vw, 22px) clamp(18px, 3vw, 26px);
+  cursor: pointer;
+  list-style: none;
+}
+
+.calculator-drop summary::-webkit-details-marker {
+  display: none;
+}
+
+.calculator-drop summary::after {
+  content: "+";
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  color: #0d6ea8;
+  font-size: 1.65rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.calculator-drop[open] summary::after {
+  content: "-";
+}
+
+.calculator-drop summary:hover,
+.calculator-drop summary:focus-visible {
+  background: #f0f8fd;
+  outline: none;
+}
+
+.calculator-drop-title {
+  color: var(--ink);
+  font-size: clamp(1.15rem, 2vw, 1.55rem);
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.calculator-drop-hint {
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.calculator-drop-body {
+  padding: 0 clamp(18px, 3vw, 26px) clamp(18px, 3vw, 26px);
+  border-top: 1px solid #e6edf3;
+}
+
+.calculator-drop-body > p:first-child {
+  margin-top: 16px;
 }
 
 .calculator-form,
@@ -990,3 +1052,4 @@ h3 {
     padding: 18px;
   }
 }
+
