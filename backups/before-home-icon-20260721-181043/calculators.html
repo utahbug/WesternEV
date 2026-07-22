@@ -1,0 +1,217 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WESTERN EV | Calculators</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="site">
+    <header class="banner"><a class="brand" href="index.html" aria-label="WESTERN EV home"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 64 64" role="img"><path d="M36.7 3 12 36.7h16.2L22.6 61 52 25.4H35.2L36.7 3Z" /></svg></span><span>WESTERN EV</span><span class="brand-car" aria-hidden="true"></span></a></header>
+    <div class="layout">
+      <aside class="sidebar" aria-label="Site navigation">
+        <nav id="site-nav" class="site-nav"><ul class="nav-list"><li><a class="nav-link" href="index.html">Home</a></li><li><a class="nav-link" href="index.html#new-to-evs">New to EVs?</a></li><li><a class="nav-link" href="index.html#planning-trip">Planning a Trip?</a></li><li><a class="nav-link" href="index.html#shopping-comparing">Shopping or Comparing?</a></li><li><a class="nav-link" href="contact.html">Contact</a></li></ul></nav>
+        <button class="resize-handle" type="button" aria-label="Resize left navigation"></button>
+      </aside>
+      <main>
+        <section class="content">
+          <h1>EV Calculators</h1>
+          <p class="lead">Simple tools for estimating trip range, arrival buffers, and home charging costs. Use them as planning baselines, then adjust for your vehicle, utility rate, weather, elevation, speed, and charger reliability.</p>
+
+          <section class="calculator-layout" aria-label="EV calculators">
+            <details class="calculator-panel calculator-drop">
+              <summary>
+                <span class="calculator-drop-title">Trip Leg Range</span>
+                <span class="calculator-drop-hint">How far can I drive and still keep an arrival buffer?</span>
+              </summary>
+              <div class="calculator-drop-body">
+                <p>Estimate the longest leg you should plan when you know your expected range, starting charge, and desired arrival buffer.</p>
+                <form class="calculator-form" id="range-calculator">
+                  <label for="rangeFull">Expected car range, miles</label>
+                  <input id="rangeFull" name="rangeFull" type="number" min="1" step="1" value="300" inputmode="decimal" />
+
+                  <label for="startCharge">Starting charge, percent</label>
+                  <input id="startCharge" name="startCharge" type="number" min="0" max="100" step="1" value="100" inputmode="decimal" />
+
+                  <label for="arrivalBuffer">Required arrival buffer, percent</label>
+                  <input id="arrivalBuffer" name="arrivalBuffer" type="number" min="0" max="100" step="1" value="20" inputmode="decimal" />
+
+                  <fieldset class="condition-options">
+                    <legend>Optional planning adjustments</legend>
+                    <label for="speedAdjustment">Speed or route pace</label>
+                    <select id="speedAdjustment" name="speedAdjustment">
+                      <option value="0">Normal mixed driving, 0% reduction</option>
+                      <option value="5">Steady highway speed, 5% reduction</option>
+                      <option value="10">Fast highway speed, 10% reduction</option>
+                      <option value="18">High-speed interstate or mountain route, 18% reduction</option>
+                    </select>
+
+                    <label for="windAdjustment">Wind or weather</label>
+                    <select id="windAdjustment" name="windAdjustment">
+                      <option value="0">Calm or mild conditions, 0% reduction</option>
+                      <option value="5">Light headwind or cool weather, 5% reduction</option>
+                      <option value="10">Noticeable headwind, rain, or cold, 10% reduction</option>
+                      <option value="20">Strong headwind or difficult winter conditions, 20% reduction</option>
+                    </select>
+                    <p class="form-note">Leave these at 0% if your expected range already reflects the driving conditions.</p>
+                  </fieldset>
+                </form>
+                <div class="calculator-result" id="rangeResult" aria-live="polite"></div>
+              </div>
+            </details>
+
+            <details class="calculator-panel calculator-drop">
+              <summary>
+                <span class="calculator-drop-title">Planned Leg Check</span>
+                <span class="calculator-drop-hint">Will a specific segment leave enough charge when I arrive?</span>
+              </summary>
+              <div class="calculator-drop-body">
+                <p>Check a specific driving leg and estimate the arrival charge after that segment.</p>
+                <form class="calculator-form" id="leg-calculator">
+                  <label for="legRangeFull">Expected car range, miles</label>
+                  <input id="legRangeFull" name="legRangeFull" type="number" min="1" step="1" value="300" inputmode="decimal" />
+
+                  <label for="legStartCharge">Starting charge, percent</label>
+                  <input id="legStartCharge" name="legStartCharge" type="number" min="0" max="100" step="1" value="100" inputmode="decimal" />
+
+                  <label for="plannedMiles">Planned leg distance, miles</label>
+                  <input id="plannedMiles" name="plannedMiles" type="number" min="0" step="1" value="180" inputmode="decimal" />
+
+                  <label for="legArrivalBuffer">Required arrival buffer, percent</label>
+                  <input id="legArrivalBuffer" name="legArrivalBuffer" type="number" min="0" max="100" step="1" value="20" inputmode="decimal" />
+
+                  <fieldset class="condition-options">
+                    <legend>Optional planning adjustments</legend>
+                    <label for="legSpeedAdjustment">Speed or route pace</label>
+                    <select id="legSpeedAdjustment" name="legSpeedAdjustment">
+                      <option value="0">Normal mixed driving, 0% reduction</option>
+                      <option value="5">Steady highway speed, 5% reduction</option>
+                      <option value="10">Fast highway speed, 10% reduction</option>
+                      <option value="18">High-speed interstate or mountain route, 18% reduction</option>
+                    </select>
+
+                    <label for="legWindAdjustment">Wind or weather</label>
+                    <select id="legWindAdjustment" name="legWindAdjustment">
+                      <option value="0">Calm or mild conditions, 0% reduction</option>
+                      <option value="5">Light headwind or cool weather, 5% reduction</option>
+                      <option value="10">Noticeable headwind, rain, or cold, 10% reduction</option>
+                      <option value="20">Strong headwind or difficult winter conditions, 20% reduction</option>
+                    </select>
+                    <p class="form-note">Use these as conservative planning cushions. Actual results vary by vehicle and conditions.</p>
+                  </fieldset>
+                </form>
+                <div class="calculator-result" id="legResult" aria-live="polite"></div>
+              </div>
+            </details>
+
+            <details class="calculator-panel calculator-drop">
+              <summary>
+                <span class="calculator-drop-title">Home Charging Cost</span>
+                <span class="calculator-drop-hint">What might home charging cost per month?</span>
+              </summary>
+              <div class="calculator-drop-body">
+                <p>Estimate a monthly home-charging cost using your electric rate and expected driving. Most electric bills charge by kWh, not kW.</p>
+                <form class="calculator-form" id="home-cost-calculator">
+                  <label for="monthlyMiles">Expected miles per month</label>
+                  <input id="monthlyMiles" name="monthlyMiles" type="number" min="0" step="10" value="1000" inputmode="decimal" />
+
+                  <label for="homeEfficiency">Vehicle efficiency, miles per kWh</label>
+                  <input id="homeEfficiency" name="homeEfficiency" type="number" min="0.1" step="0.1" value="3.3" inputmode="decimal" />
+
+                  <label for="homeRate">Electric rate, dollars per kWh</label>
+                  <input id="homeRate" name="homeRate" type="number" min="0" step="0.001" value="0.12" inputmode="decimal" />
+
+                  <label for="chargingLoss">Charging loss, percent</label>
+                  <input id="chargingLoss" name="chargingLoss" type="number" min="0" max="35" step="1" value="10" inputmode="decimal" />
+
+                  <p class="form-note">For tiered or peak-hour billing, enter the rate that applies when you usually charge, or use a blended average from your bill.</p>
+                </form>
+                <div class="calculator-result" id="homeCostResult" aria-live="polite"></div>
+              </div>
+            </details>
+
+            <details class="calculator-panel calculator-drop">
+              <summary>
+                <span class="calculator-drop-title">Home Charging Session</span>
+                <span class="calculator-drop-hint">What does one overnight plug-in session cost?</span>
+              </summary>
+              <div class="calculator-drop-body">
+                <p>Estimate the cost of a single home plug-in session, such as charging overnight for 8 to 10 hours.</p>
+                <form class="calculator-form" id="session-cost-calculator">
+                  <label for="sessionPower">Home charger power</label>
+                  <select id="sessionPower" name="sessionPower">
+                    <option value="1.2">Level 1 outlet, about 1.2 kW</option>
+                    <option value="3.8">Lower-power Level 2, 3.8 kW</option>
+                    <option value="7.2" selected>Typical Level 2, 7.2 kW</option>
+                    <option value="9.6">Higher Level 2, 9.6 kW</option>
+                    <option value="11.5">High home Level 2, 11.5 kW</option>
+                  </select>
+
+                  <label for="sessionHours">Plug-in session length</label>
+                  <select id="sessionHours" name="sessionHours">
+                    <option value="1">1 hour</option>
+                    <option value="2">2 hours</option>
+                    <option value="3">3 hours</option>
+                    <option value="4">4 hours</option>
+                    <option value="5">5 hours</option>
+                    <option value="6">6 hours</option>
+                    <option value="7">7 hours</option>
+                    <option value="8" selected>8 hours</option>
+                    <option value="9">9 hours</option>
+                    <option value="10">10 hours</option>
+                  </select>
+
+                  <label for="sessionRate">Electric rate, dollars per kWh</label>
+                  <input id="sessionRate" name="sessionRate" type="number" min="0" step="0.001" value="0.41" inputmode="decimal" />
+
+                  <label for="sessionEfficiency">Vehicle efficiency, miles per kWh</label>
+                  <input id="sessionEfficiency" name="sessionEfficiency" type="number" min="0.1" step="0.1" value="3.3" inputmode="decimal" />
+
+                  <label for="sessionLoss">Charging loss, percent</label>
+                  <input id="sessionLoss" name="sessionLoss" type="number" min="0" max="35" step="1" value="10" inputmode="decimal" />
+
+                  <p class="form-note">Session cost is based on power from the wall. Miles added is only an estimate because vehicles, battery temperature, and charge level can change efficiency.</p>
+                </form>
+                <div class="calculator-result" id="sessionCostResult" aria-live="polite"></div>
+              </div>
+            </details>
+          </section>
+          <section class="term-panel">
+            <h2>Trip-planning considerations</h2>
+            <p>Use these calculators as rough baselines. Real trips can change quickly, especially in mountain states, winter weather, open desert routes, and areas with long distances between reliable chargers.</p>
+            <ul class="detail-list">
+              <li><strong>Elevation:</strong> Long climbs can use much more energy than flat roads. Long descents may recover some energy, but do not count on recovering everything used on the climb.</li>
+              <li><strong>Wind and weather:</strong> Headwinds, snow, rain, cold temperatures, slush, and heater use can all reduce range. When conditions are rough, plan a shorter leg or a larger buffer.</li>
+              <li><strong>Speed:</strong> Higher highway speeds can reduce efficiency. A slower pace may be the difference between arriving comfortably and arriving with very little charge.</li>
+              <li><strong>Charger reliability:</strong> Before committing to a long leg, check the next charger, recent driver comments, connector type, access hours, and at least one backup option.</li>
+              <li><strong>Remote routes:</strong> A 10% buffer may be enough near many chargers, but 20% or more can be wiser in bad weather, mountain terrain, or areas with fewer charging choices.</li>
+            </ul>
+          </section>
+
+          <section class="term-panel">
+            <h2>Power words in plain language</h2>
+            <ul class="detail-list">
+              <li><strong>kW:</strong> Charging speed or power. A 150 kW charger can add energy faster than a 50 kW charger when the car and conditions allow it.</li>
+              <li><strong>kWh:</strong> Energy amount. A battery with more usable kWh can usually store more driving range.</li>
+              <li><strong>mi/kWh:</strong> Efficiency. Higher miles per kWh means the car goes farther on the same energy.</li>
+              <li><strong>Percent charge:</strong> The easiest planning number for daily use. A trip buffer of 10% to 20% can make road trips less stressful.</li>
+              <li><strong>Speed and wind:</strong> Faster driving and headwinds can reduce range. The calculator treats them as optional planning reductions, not exact vehicle-specific predictions.</li>
+              <li><strong>Home electric rate:</strong> Utility bills usually price energy in dollars per kWh. If your rate changes by time of day, season, or usage tier, use the rate that matches when you charge or a blended estimate.</li>
+            </ul>
+            <div class="page-actions">
+              <a class="button" href="ev-terms.html">EV Terminology</a>
+              <a class="button secondary" href="charging-types.html">Charging Types</a>
+            </div>
+          </section>
+        </section>
+      </main>
+    </div>
+    <footer class="footer"><span>&copy; 2026 WESTERN EV</span><span><a href="index.html">Home</a> | <a href="index.html#new-to-evs">New to EVs</a> | <a href="index.html#planning-trip">Planning a Trip</a> | <a href="index.html#shopping-comparing">Shopping / Comparing</a> | <a href="contact.html">Contact</a></span></footer>
+  </div>
+</body>
+</html>
+
+

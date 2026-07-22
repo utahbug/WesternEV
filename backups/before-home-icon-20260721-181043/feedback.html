@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WESTERN EV | Feedback</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="site">
+    <header class="banner"><a class="brand" href="index.html" aria-label="WESTERN EV home"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 64 64" role="img"><path d="M36.7 3 12 36.7h16.2L22.6 61 52 25.4H35.2L36.7 3Z" /></svg></span><span>WESTERN EV</span><span class="brand-car" aria-hidden="true"></span></a></header>
+    <div class="layout">
+      <aside class="sidebar" aria-label="Site navigation">
+        <nav id="site-nav" class="site-nav"><ul class="nav-list"><li><a class="nav-link" href="index.html">Home</a></li><li><a class="nav-link" href="index.html#new-to-evs">New to EVs?</a></li><li><a class="nav-link" href="index.html#planning-trip">Planning a Trip?</a></li><li><a class="nav-link" href="index.html#shopping-comparing">Shopping or Comparing?</a></li><li><a class="nav-link" href="contact.html">Contact</a></li></ul></nav>
+        <button class="resize-handle" type="button" aria-label="Resize left navigation"></button>
+      </aside>
+      <main>
+        <section class="content">
+          <h1>Route and Station Feedback</h1>
+          <p class="lead">Short traveler reports can help confirm which stops are dependable, which stations need caution, and which backup options are worth listing.</p>
+
+          <section class="detail-panel wide-panel">
+            <h2>Useful feedback</h2>
+            <ul class="detail-list">
+              <li><strong>Route:</strong> Include the corridor, direction, and major leg. Example: Salt Lake City to Los Angeles, I-15 southbound.</li>
+              <li><strong>Station:</strong> Include the station name, city, nearby business, and charger network when known.</li>
+              <li><strong>Access:</strong> Note gates, blocked entrances, parking limits, after-hours access, and whether staff activation was needed.</li>
+              <li><strong>Charging result:</strong> Say whether it worked, failed, charged slowly, required an app, required an adapter, or had a long wait.</li>
+              <li><strong>Recommendation:</strong> Mark the stop as primary, backup only, avoid for now, or needs more verification.</li>
+            </ul>
+          </section>
+
+          <section class="calculator-panel wide-panel">
+            <h2>Feedback note builder</h2>
+            <p>Use this local worksheet to create a clean note. Copy the prepared note or open a temporary email to Ken Roberts with the subject line Western EV. A dedicated site email or hosted form can be connected later.</p>
+            <form class="feedback-form" id="feedback-form">
+              <div class="feedback-grid">
+                <label for="feedbackType">Report type</label>
+                <select id="feedbackType" name="feedbackType">
+                  <option>Station experience</option>
+                  <option>Route experience</option>
+                  <option>Correction</option>
+                  <option>Question</option>
+                </select>
+
+                <label for="feedbackRoute">Route or corridor</label>
+                <input id="feedbackRoute" name="feedbackRoute" type="text" placeholder="Example: Salt Lake City to Los Angeles, I-15" />
+
+                <label for="feedbackStation">Station or stop area</label>
+                <input id="feedbackStation" name="feedbackStation" type="text" placeholder="Example: Cedar City Walmart, Ford backup, Nephi Tesla" />
+
+                <label for="feedbackDate">Visit date</label>
+                <input id="feedbackDate" name="feedbackDate" type="date" />
+
+                <label for="feedbackCharger">Charger type</label>
+                <select id="feedbackCharger" name="feedbackCharger">
+                  <option>DC fast charger</option>
+                  <option>Tesla Supercharger</option>
+                  <option>Level 2</option>
+                  <option>Unknown</option>
+                  <option>Other</option>
+                </select>
+
+                <label for="feedbackAccess">Access result</label>
+                <select id="feedbackAccess" name="feedbackAccess">
+                  <option>Public and easy to access</option>
+                  <option>Accessible after hours</option>
+                  <option>Blocked or gated</option>
+                  <option>Staff activation needed</option>
+                  <option>Not sure</option>
+                </select>
+
+                <label for="feedbackResult">Charging result</label>
+                <select id="feedbackResult" name="feedbackResult">
+                  <option>Successful</option>
+                  <option>Worked with trouble</option>
+                  <option>Unavailable</option>
+                  <option>Long wait</option>
+                  <option>Did not try</option>
+                </select>
+
+                <label for="feedbackRecommendation">Route recommendation</label>
+                <select id="feedbackRecommendation" name="feedbackRecommendation">
+                  <option>Primary stop</option>
+                  <option>Backup only</option>
+                  <option>Avoid for now</option>
+                  <option>Needs verification</option>
+                </select>
+              </div>
+
+              <label for="feedbackNotes">Traveler notes</label>
+              <textarea id="feedbackNotes" name="feedbackNotes" rows="5" placeholder="What helped? What failed? Was an app, adapter, phone, credit card, or employee needed?"></textarea>
+
+              <label for="feedbackOutput">Prepared note</label>
+              <textarea class="feedback-output" id="feedbackOutput" rows="11" readonly></textarea>
+
+              <div class="page-actions">
+                <button class="button" type="submit">Build note</button>
+                <button class="button secondary" id="copyFeedbackNote" type="button">Copy note</button>
+                <a class="button secondary" id="emailFeedbackNote" href="mailto:KenRoberts@live.com?subject=Western%20EV">Email Ken Roberts</a>
+              </div>
+              <p class="form-note" id="feedbackCopyStatus" role="status" aria-live="polite"></p>
+            </form>
+          </section>
+
+          <section class="detail-panel">
+            <h2>Publishing rules</h2>
+            <ul class="detail-list">
+              <li><strong>Date matters:</strong> Station access, pricing, and reliability can change quickly.</li>
+              <li><strong>No private details:</strong> Avoid license plates, personal names, phone numbers, or photos of other drivers.</li>
+              <li><strong>Moderate first:</strong> Treat user reports as leads until the route segment is reviewed and verified.</li>
+            </ul>
+            <div class="page-actions">
+              <a class="button" href="route-notes.html">Route Segments</a>
+              <a class="button secondary" href="station-maps.html">Station Maps</a>
+              <a class="button secondary" href="contact.html">Contact</a>
+            </div>
+          </section>
+        </section>
+      </main>
+    </div>
+    <footer class="footer"><span>&copy; 2026 WESTERN EV</span><span><a href="index.html">Home</a> | <a href="index.html#new-to-evs">New to EVs</a> | <a href="index.html#planning-trip">Planning a Trip</a> | <a href="index.html#shopping-comparing">Shopping / Comparing</a> | <a href="contact.html">Contact</a></span></footer>
+  </div>
+</body>
+</html>
+

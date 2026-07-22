@@ -1,10 +1,14 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>WESTERN EV | Overview</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <link rel="manifest" href="site.webmanifest" />
+  <meta name="theme-color" content="#2d6f8b" />
+  <meta name="apple-mobile-web-app-title" content="Western EV" />
   <link rel="stylesheet" href="styles.css" />
   <script src="script.js" defer></script>
 </head>
@@ -13,7 +17,7 @@
     <header class="banner">
       <a class="brand" href="index.html" aria-label="WESTERN EV home">
         <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 64 64" role="img"><path d="M36.7 3 12 36.7h16.2L22.6 61 52 25.4H35.2L36.7 3Z" /></svg></span>
-        <span>WESTERN EV</span>
+        <span>WESTERN EV</span><span class="brand-car" aria-hidden="true"></span>
       </a>
     </header>
     <div class="layout">
@@ -47,30 +51,9 @@
             <a class="home-path-button" id="shopping-comparing" href="ev-models.html">Compare</a>
           </section>
 
-          <section class="feature home-feature">
-            <div class="feature-visual" aria-hidden="true">
-              <svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0 252h720v48H0z" fill="#24485f" opacity=".18" />
-                <path d="M68 214c70-82 124-115 169-99 53 18 83 95 139 78 67-20 74-122 152-121 53 1 90 47 124 101 21 34 44 57 68 69H68z" fill="#f2fbff" opacity=".8" />
-                <path d="M130 205h390c18 0 34 9 44 24l26 39H84l28-43c4-12 10-20 18-20Z" fill="#fff" />
-                <path d="M180 155h228c33 0 63 18 79 47l14 25H141l19-43c4-18 9-29 20-29Z" fill="#e6f8ff" />
-                <path d="M222 170h91v42h-118l18-34c2-5 5-8 9-8Zm113 0h68c21 0 40 11 51 29l8 13H335v-42Z" fill="#67c7f5" opacity=".78" />
-                <circle cx="194" cy="266" r="39" fill="#26384a" />
-                <circle cx="194" cy="266" r="17" fill="#92dfff" />
-                <circle cx="501" cy="266" r="39" fill="#26384a" />
-                <circle cx="501" cy="266" r="17" fill="#92dfff" />
-                <path d="M586 139h35v101h-35z" fill="#fff" />
-                <path d="M578 128h51v22h-51z" fill="#d7f3ff" />
-                <path d="M609 158c-16 29-16 51 0 67 20 21 63 7 63-32 0-22-11-35-34-39" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round" />
-                <path d="M598 177h13l-8 21h16l-25 34 5-25h-14l13-30Z" fill="#55bff2" />
-              </svg>
-            </div>
-            <h2>EV information without the drama.</h2>
-            <p>Choose the path that matches what you need today: learn the basics, plan a route, or compare EV options.</p>
-            <div class="page-actions site-index-action">
-              <a class="button secondary" href="site-index.html">Site Index</a>
-            </div>
-          </section>
+          <div class="page-actions builder-actions">
+            <a class="button secondary" href="site-index.html">Site Index</a>
+          </div>
         </section>
       </main>
     </div>
@@ -78,5 +61,8 @@
   </div>
 </body>
 </html>
+
+
+
 
 
