@@ -1,0 +1,26 @@
+{
+  "name": "Western EV",
+  "short_name": "Western EV",
+  "description": "Western EV route, charging, and EV basics notes.",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#f7f4ec",
+  "theme_color": "#2d6f8b",
+  "icons": [
+    {
+      "src": "apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
