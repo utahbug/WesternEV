@@ -6,18 +6,16 @@
       <stop offset="0.58" stop-color="#2d6f8b"/>
       <stop offset="1" stop-color="#647a5d"/>
     </linearGradient>
-    <linearGradient id="car" x1="12" y1="25" x2="53" y2="44" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#ffffff"/>
-      <stop offset="1" stop-color="#e6f2f4"/>
-    </linearGradient>
   </defs>
   <rect width="64" height="64" rx="14" fill="url(#bg)"/>
-  <path d="M9 43h46l3-8-6-5-10-2-7-7H23l-8 8-8 4v7l2 3Z" fill="url(#car)"/>
+  <path d="M9 43h46l3-8-6-5-10-2-7-7H23l-8 8-8 4v7l2 3Z" fill="#111820" stroke="#ffffff" stroke-width="2"/>
   <path d="M24 25h10l5 5H19l5-5Zm13 0 6 5h8l-7-5h-7Z" fill="#2d6f8b" opacity="0.85"/>
   <path d="M8 40h7v3H8v-3Zm45-1h5v4h-7l2-4Z" fill="#d2a342"/>
-  <circle cx="21" cy="44" r="8" fill="#202832"/>
-  <circle cx="21" cy="44" r="3.2" fill="#ffffff"/>
-  <circle cx="46" cy="44" r="8" fill="#202832"/>
-  <circle cx="46" cy="44" r="3.2" fill="#ffffff"/>
-  <path d="M14 34h38" stroke="#202832" stroke-width="2" stroke-linecap="round" opacity="0.25"/>
+  <circle cx="21" cy="44" r="8" fill="#ffffff"/>
+  <circle cx="21" cy="44" r="5.3" fill="#111820"/>
+  <circle cx="21" cy="44" r="2.2" fill="#d2a342"/>
+  <circle cx="46" cy="44" r="8" fill="#ffffff"/>
+  <circle cx="46" cy="44" r="5.3" fill="#111820"/>
+  <circle cx="46" cy="44" r="2.2" fill="#d2a342"/>
+  <path d="M14 34h38" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" opacity="0.28"/>
 </svg>
