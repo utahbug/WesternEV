@@ -68,34 +68,37 @@ body {
 
 .brand-car {
   position: relative;
-  width: clamp(72px, 9vw, 112px);
-  height: clamp(34px, 4.2vw, 52px);
+  width: clamp(82px, 10vw, 124px);
+  height: clamp(42px, 4.8vw, 58px);
   flex: 0 0 auto;
   margin-left: clamp(0px, 0.8vw, 8px);
   background:
-    radial-gradient(circle at 28% 82%, var(--charcoal) 0 7px, #fff 8px 12px, transparent 13px),
-    radial-gradient(circle at 74% 82%, var(--charcoal) 0 7px, #fff 8px 12px, transparent 13px);
+    radial-gradient(circle at 31% 78%, #edf7f8 0 3px, var(--charcoal) 4px 12px, transparent 13px),
+    radial-gradient(circle at 76% 78%, #edf7f8 0 3px, var(--charcoal) 4px 12px, transparent 13px);
+  filter: drop-shadow(2px 3px 0 rgba(25, 43, 60, 0.22));
 }
 
 .brand-car::before {
   content: "";
   position: absolute;
-  inset: 8px 0 10px;
-  border: 3px solid rgba(255, 255, 255, 0.9);
-  background: rgba(255, 255, 255, 0.12);
-  clip-path: polygon(7% 100%, 0 68%, 10% 50%, 27% 47%, 39% 10%, 70% 10%, 86% 47%, 96% 50%, 100% 68%, 93% 100%);
+  inset: 7px 2px 13px;
+  border: 2px solid rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.94);
+  clip-path: polygon(4% 82%, 13% 57%, 29% 51%, 40% 16%, 69% 10%, 86% 39%, 98% 52%, 94% 77%, 84% 96%, 14% 96%);
+  transform: skewX(-4deg);
+  transform-origin: 70% 75%;
 }
 
 .brand-car::after {
   content: "";
   position: absolute;
-  left: 36%;
-  top: 10px;
-  width: 35%;
-  height: 14px;
+  left: 37%;
+  top: 12px;
+  width: 38%;
+  height: 15px;
   background:
-    linear-gradient(90deg, rgba(255, 255, 255, 0.82) 0 43%, transparent 44% 53%, rgba(255, 255, 255, 0.82) 54% 100%);
-  clip-path: polygon(8% 100%, 28% 0, 76% 0, 100% 100%);
+    linear-gradient(90deg, rgba(45, 111, 139, 0.78) 0 42%, rgba(255, 255, 255, 0.72) 43% 52%, rgba(45, 111, 139, 0.78) 53% 100%);
+  clip-path: polygon(6% 100%, 25% 0, 79% 0, 100% 100%);
 }
 
 .brand-mark {
@@ -432,30 +435,32 @@ h3 {
 
 .home-button-row {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 180px));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
   margin: 46px 0 22px;
 }
 
 .home-path-button {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  justify-content: center;
-  min-height: 40px;
-  padding: 9px 14px;
+  min-height: 44px;
+  padding: 9px 12px;
+  border: 1px solid var(--line);
   border-radius: 8px;
-  color: var(--sky);
-  background: var(--surface-soft);
+  color: var(--ink);
+  background: #fffdf8;
+  box-shadow: 0 16px 40px rgba(31, 36, 40, 0.09);
   font-size: 1rem;
-  font-weight: 700;
-  text-align: center;
+  font-weight: 800;
+  line-height: 1.25;
+  text-align: left;
   text-decoration: none;
 }
 
 .home-path-button:hover,
 .home-path-button:focus-visible {
   color: #194f45;
-  background: #e6f2f4;
+  background: var(--surface-soft);
   outline: 3px solid rgba(210, 163, 66, 0.35);
 }
 
@@ -1100,6 +1105,47 @@ h3 {
   outline: 3px solid rgba(210, 163, 66, 0.38);
 }
 
+.content a[href^="http"] {
+  color: #7a4b05;
+  font-weight: 700;
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+.content a[href^="http"]::after {
+  content: "outside";
+  display: inline-block;
+  margin-left: 6px;
+  padding: 1px 6px;
+  border: 1px solid rgba(210, 163, 66, 0.62);
+  border-radius: 999px;
+  color: #684506;
+  background: #fff7de;
+  font-size: 0.68em;
+  font-weight: 800;
+  line-height: 1.35;
+  text-decoration: none;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+
+.content .button[href^="http"],
+.content .doorway-links a[href^="http"],
+.content .page-actions a[href^="http"] {
+  border: 2px solid rgba(210, 163, 66, 0.7);
+  color: #684506;
+  background: #fff7de;
+  text-decoration: none;
+}
+
+.content a[href^="http"]:hover,
+.content a[href^="http"]:focus-visible {
+  color: #194f45;
+  outline: 3px solid rgba(210, 163, 66, 0.35);
+}
+
 .footer {
   width: 100%;
   display: flex;
@@ -1199,18 +1245,18 @@ h3 {
   }
 
   .brand-car {
-    width: 54px;
-    height: 28px;
+    width: 68px;
+    height: 38px;
   }
 
   .brand-car::before {
-    inset: 6px 0 8px;
+    inset: 6px 1px 11px;
     border-width: 2px;
   }
 
   .brand-car::after {
-    top: 8px;
-    height: 9px;
+    top: 10px;
+    height: 10px;
   }
 
   main {
